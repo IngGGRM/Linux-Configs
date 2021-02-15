@@ -64,5 +64,5 @@ To get this launcher play through Lutris, have to make an executable file somewh
 Now start adding a new game in Lutris with "Steam Runs Steam Games" in runner and in executable file look for the file created behind.
     If it gives and error runnig, edit executable file and add "bash " in front of exec line
 
-To manage MangoHud with MentalOmega through Lutris edit executable file and add "MANGOHUD_DLSYM=1 " in front of exec line, and set Lutris "FPS Couner (MangoHud)" to OpenGL
-
+To manage MangoHud first install it with https://github.com/flightlessmango/MangoHud
+then, with MentalOmega through Lutris edit executable file and add "MANGOHUD_DLSYM=1 " in front of exec line, and set Lutris "FPS Couner (MangoHud)" to OpenGL

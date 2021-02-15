@@ -1,0 +1,28 @@
+If you want to save a Windows installation boot in the drive, copy and save the Microsoft folder in your efi partition (boot/efi/EFI), look for it, need root
+
+1. Repair Boot (GRUB_EFI) in POP_OS! 20.04 tested (Debian Environment) ******* This is when boot fail after being working ********
+
+2. Using LiveUSB with POP_OS! set internet and run the following shell commnands:
+
+      sudo apt update
+      sudo parted -ls      (to see drives numbers) (write down the "/dev/xxxx" of efi (fat32) and linux root (ext4) partition)
+    
+      */*/*/ Asuming /dev/sda as your drive, /dev/sda1 as your efi and /dev/sda2 as your linux root /*/*/*
+    
+      sudo mount /dev/sda2 /mnt
+      sudo mount /dev/sda1 /mnt/boot/efi
+      for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done
+      sudo cp -n /etc/resolv.conf /mnt/etc/
+
+      sudo chroot /mnt
+      apt install --reinstall grub-efi-amd64 linux-generic linux-headers-generic
+      update-initramfs -c -k all
+      
+      sudo cp /boot/grub/x86_64-efi/grub.efi /boot/efi/EFI/pop/grubx64.efi
+      
+      if you saved the Microsoft folder in step 0
+          copy it to /mnt/boot/efi/EFI or see if it's already in there
+          sudo apt install os-prober
+          sudo os-prober
+      
+3. sudo update-grub

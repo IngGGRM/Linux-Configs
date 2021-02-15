@@ -1,0 +1,8 @@
+
+UUID=UUID_NUMBER /media/windowsDisk ntfs uid=1000,gid=1000,rw,user,exec,umask=000 0 0
+
+to get UUID_NUMBER run
+
+    sudo blkid /dev/sdaX  (where sdaX is the /dev/ kind for the partition you want to mount
+    
+you can set another mount path replacing /media/windowsDisk

@@ -1,0 +1,318 @@
+{
+  "fullscreenDefault": false,
+  "fullscreen": false,
+  "iconDefault": "start-here-kde",
+  "icon": "start-here-kde",
+  "fixedPanelIconDefault": true,
+  "fixedPanelIcon": true,
+  "searchResultsMergedDefault": true,
+  "searchResultsMerged": true,
+  "searchResultsCustomSortDefault": false,
+  "searchResultsReversedDefault": false,
+  "searchDefaultFiltersDefault": [
+    "Dictionary",
+    "services",
+    "calculator",
+    "shell",
+    "org.kde.windowedwidgets",
+    "org.kde.datetime",
+    "baloosearch",
+    "locations",
+    "unitconverter"
+  ],
+  "searchDefaultFilters": [
+    "Dictionary",
+    "services",
+    "calculator",
+    "shell",
+    "org.kde.windowedwidgets",
+    "org.kde.datetime",
+    "baloosearch",
+    "locations",
+    "unitconverter"
+  ],
+  "showRecentAppsDefault": true,
+  "showRecentApps": true,
+  "recentOrderingDefault": 1,
+  "recentOrdering": 1,
+  "numRecentAppsDefault": 5,
+  "numRecentApps": 5,
+  "sidebarShortcutsDefault": [
+    "xdg:DOCUMENTS",
+    "xdg:PICTURES",
+    "org.kde.dolphin.desktop",
+    "systemsettings.desktop"
+  ],
+  "sidebarShortcuts": [
+    "xdg:DOCUMENTS",
+    "xdg:PICTURES",
+    "org.kde.dolphin.desktop",
+    "systemsettings.desktop"
+  ],
+  "defaultAppListViewDefault": "Alphabetical",
+  "defaultAppListView": "Categories",
+  "tileModelDefault": "",
+  "tileModel": [
+    {
+      "x": 0,
+      "y": 5,
+      "w": 2,
+      "h": 2,
+      "url": "net.lutris.Lutris.desktop",
+      "showLabel": false,
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "w": 2,
+      "h": 2,
+      "url": "firefox.desktop",
+      "showLabel": false,
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "w": 1,
+      "h": 1,
+      "url": "org.manjaro.pamac.manager.desktop",
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "w": 2,
+      "h": 2,
+      "url": "cantata.desktop",
+      "showLabel": false,
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 4,
+      "y": 2,
+      "w": 2,
+      "h": 1,
+      "url": "caprine.desktop",
+      "label": "Messenger",
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "w": 1,
+      "h": 1,
+      "url": "google-chrome.desktop",
+      "label": "Chrome",
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "w": 1,
+      "h": 1,
+      "url": "chrome-dbpkegghbgplfeaapbejbnfpbgnbjedf-Default.desktop",
+      "label": "Meet",
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 2,
+      "y": 10,
+      "w": 4,
+      "h": 1,
+      "url": "org.kde.konsole.desktop",
+      "showLabel": true,
+      "backgroundColor": "#783334"
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "w": 2,
+      "h": 1,
+      "url": "org.kde.ksysguard.desktop",
+      "backgroundColor": "#783334",
+      "label": "KDE System Monitor"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "w": 2,
+      "h": 2,
+      "url": "playonlinux-Microsoft Word 2010.desktop",
+      "label": "Word",
+      "showLabel": false,
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 6,
+      "y": 2,
+      "w": 1,
+      "h": 1,
+      "url": "playonlinux-Microsoft Powerpoint 2010.desktop",
+      "label": "PowerPoint",
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 7,
+      "y": 2,
+      "w": 1,
+      "h": 1,
+      "url": "playonlinux-Microsoft Excel 2010.desktop",
+      "label": "Excel",
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 6,
+      "y": 4,
+      "w": 2,
+      "h": 1,
+      "url": "org.openshot.OpenShot.desktop",
+      "label": "OpenShot",
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "w": 1,
+      "h": 3,
+      "url": "openboard.desktop",
+      "label": "OpenBoard",
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "w": 1,
+      "h": 1,
+      "url": "PlayOnLinux.desktop",
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "w": 1,
+      "h": 1,
+      "url": "org.qbittorrent.qBittorrent.desktop",
+      "label": "qBitTorrent",
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 6,
+      "y": 3,
+      "w": 2,
+      "h": 1,
+      "url": "simplescreenrecorder.desktop",
+      "label": "Screen Recorder",
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 2,
+      "y": 6,
+      "w": 2,
+      "h": 2,
+      "url": "steam-native.desktop",
+      "showLabel": true,
+      "label": "Steam",
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "w": 1,
+      "h": 1,
+      "url": "thunderbird.desktop",
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "w": 2,
+      "h": 2,
+      "url": "walc_walc.desktop",
+      "showLabel": false,
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "w": 3,
+      "h": 1,
+      "url": "xdman.desktop",
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 6,
+      "y": 5,
+      "w": 2,
+      "h": 1,
+      "url": "vlc.desktop",
+      "label": "VLC Media",
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 6,
+      "y": 10,
+      "w": 2,
+      "h": 1,
+      "url": "htop.desktop",
+      "backgroundColor": "#783334",
+      "label": "",
+      "showIcon": true
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "w": 1,
+      "h": 1,
+      "url": "links.desktop",
+      "label": "Links",
+      "backgroundColor": "#3d3d3d"
+    },
+    {
+      "x": 2,
+      "y": 5,
+      "w": 2,
+      "h": 1,
+      "url": "file:///home/ingggrm/Escritorio/Mental Omega XNA_Client.desktop",
+      "backgroundColor": "#3d3d3d",
+      "label": "Mental Omega"
+    }
+  ],
+  "tileScaleDefault": 0.8,
+  "tileMarginDefault": 5,
+  "tileMargin": 5,
+  "tilesLockedDefault": false,
+  "tilesLocked": false,
+  "defaultTileColorDefault": "",
+  "defaultTileColor": "#00000000",
+  "defaultTileGradientDefault": false,
+  "defaultTileGradient": false,
+  "sidebarBackgroundColorDefault": "",
+  "sidebarBackgroundColor": "",
+  "hideSearchFieldDefault": false,
+  "hideSearchField": false,
+  "searchFieldFollowsThemeDefault": false,
+  "searchFieldFollowsTheme": true,
+  "sidebarFollowsThemeDefault": false,
+  "sidebarFollowsTheme": true,
+  "tileLabelAlignmentDefault": "left",
+  "tileLabelAlignment": "center",
+  "appDescriptionDefault": "after",
+  "appDescription": "after",
+  "menuItemHeightDefault": 36,
+  "menuItemHeight": 36,
+  "searchFieldHeightDefault": 48,
+  "searchFieldHeight": 36,
+  "appListWidthDefault": 350,
+  "appListWidth": 350,
+  "favGridColsDefault": 6,
+  "favGridCols": 8,
+  "popupHeightDefault": 620,
+  "popupHeight": 700,
+  "sidebarButtonSizeDefault": 48,
+  "sidebarButtonSize": 48,
+  "sidebarIconSizeDefault": 30,
+  "sidebarIconSize": 30,
+  "sidebarPopupButtonSizeDefault": 36,
+  "sidebarPopupButtonSize": 36
+}

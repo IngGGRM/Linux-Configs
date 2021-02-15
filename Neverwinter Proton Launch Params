@@ -1,0 +1,14 @@
+ STEAM PROTON v5.13 Launch Params
+ 
+    PROTON_USE_D9VK=1 %command% RADV_PERFTEST=aco %command% PROTON_NO_ESYNC=1 %command% PROTON_NO_FSYNC=1 %command% gamemoderun %command%
+ 
+ or just 
+ 
+    PROTON_NO_ESYNC=1 %command%
+    In Lutris set:
+        Enable ACO Shader Compiler
+        Enable Feral GameMode
+
+ Then
+    In game "Display Settings" enable "Monitor Vertical Sync"
+    In game "Advanced Settings" enable "Framerate Stabilizer"

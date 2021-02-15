@@ -1,0 +1,22 @@
+Grub installation (GRUB_EFI) in POP_OS! 20.04 tested (Debian Environment) ******* This is when boot works but is not grub ********
+
+1. In the installed OS shell input the next commnands:
+
+      sudo apt update -y && sudo apt upgrade -y
+      sudo apt install grub-efi grub2-common grub-customizer
+      sudo grub-install
+      sudo cp /boot/grub/x86_64-efi/grub.efi /boot/efi/EFI/pop/grubx64.efi
+      sudo apt install os-prober
+      sudo os-prober
+      
+2. Open installed app grub-customizer
+      Click in file upper left tab and on "Change Environment"
+      In the OUTPUT_FIle change the value to: /boot/efi/EFI/pop/grub.cfg
+      Select save this configuration
+      Click Apply
+      
+3. Reboot your system
+
+Grub Themes can be installed through the grub-customizer
+
+Themes also ca be installed copying theme folder to /boot/grub/theme/ and running sudo grub-update

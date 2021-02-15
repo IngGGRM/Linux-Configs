@@ -1,0 +1,68 @@
+In first step, be sure to install Wine(staging in my case), WineTricks, PlayOnLinux(fastest way to create blottled wine-prefixes)
+In PlayOnLinux, create a virtual device as you're going to install the game "Red Alert 3" (becouse Red Alert 2 is not listed)
+Follow the installation steps and let PlayOnLinux install your RA2 Setup instead, finally it will give an error about RA3 executables, just ignore it
+Configure PlayOnLinux RA3 virtual device, in "Wine/Configure Wine" tab set in Application tab WindowsXP and in Libraries tab just add the following libs (no matter if shows a warning):
+    |---LIB----|---EDIT---|
+    |          |          |
+    |  ddraw   |  native  |
+    | wsock32  |  native  |
+    | winhttp  | int, nat |
+    | mscoree  |  native  |
+    | gdiplus  |  native  |
+    | d3dx9_24 | int, nat |
+    | d3dx9_25 | int, nat |
+    | d3dx9_26 | int, nat |
+    | d3dx9_27 | int, nat |
+    | d3dx9_28 | int, nat |
+    | d3dx9_29 | int, nat |
+    | d3dx9_30 | int, nat |
+    | d3dx9_31 | int, nat |
+    | d3dx9_32 | int, nat |
+    | d3dx9_33 | int, nat |
+    | d3dx9_34 | int, nat |
+    | d3dx9_35 | int, nat |
+    | d3dx9_36 | int, nat |
+    | d3dx9_37 | int, nat |
+    | d3dx9_38 | int, nat |
+    | d3dx9_39 | int, nat |
+    | d3dx9_40 | int, nat |
+    | d3dx9_41 | int, nat |
+    | d3dx9_42 | int, nat |
+    | d3dx9_43 | int, nat |
+    |----------|----------|
+
+Now in PlayOnLinux RA3 virtual device "Component Install" tab install
+    DotNet20sp2, Gecko, vcRun2008, xna40, in that order
+In PlayOnLinux RA3 virtual device "Misc" tab click on "Open Virtual Drive Directory"
+    Place MentalOmega folder in drive_c and copy from drive_C/program files/RA2 the following:
+        BINKW32.dll, BLOWFISH.dll, gamemd.exe, ra2.mix, ra2md.mix, language.mix, langmd.mix
+        
+        Also delete the following from Mental Omega directory:
+            All .wav and .wma files in Rosources and Resources/MainMenu
+            All .xnb files except "SpriteFont" ones.
+   
+Now return to PlayOnLinux RA3 virtual drive configuration, in "General" tab click on "Create Shortcut.."
+    CLick in explore and go throgh the RA3 drive_c to Mental Omega folder and select "MentalOmegaClient.exe"
+    If the app give you an error running, use xnaClient.exe in MentalOmega/Resources/ instead of MentalOmegaClient.exe
+
+Now you can run the game through the shortcut created in desktop or in PlayOnLinux gui. Open and update the launcher.
+
+After updates, try to secure that the game works, just start a match to see.
+    Some workarounds to let it run:
+        Set game graphics to Low and after that try different combinations.
+        Set game renderer to TSDDraw.
+
+|------------------------------------|
+|   Lutris and MangoHud workaround   |
+|------------------------------------|
+
+To get this launcher play through Lutris, have to make an executable file somewhere in your home folder and set "EXEC" to your version of the next command:
+
+    /usr/share/playonlinux/playonlinux --run "MentalOmegaClient" %F (to find yours just cat the .desktop file of the shortcut created by PlayOnLinux)
+    give it execute permissions and try to run it, the game should run through it.
+
+Now start adding a new game in Lutris with "Steam Runs Steam Games" in runner and in executable file look for the file created behind.
+    If it gives and error runnig, edit executable file and add "bash " in front of exec line
+
+To manage MangoHud with MentalOmega through Lutris edit executable file and add "MANGOHUD_DLSYM=1 " in front of exec line, and set Lutris "FPS Couner (MangoHud)" to OpenGL
+

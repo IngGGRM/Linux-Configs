@@ -18,7 +18,7 @@ Repair Boot (GRUB_EFI) in POP_OS! 20.04 tested (Debian Environment) ******* This
       apt install --reinstall grub-efi-amd64 linux-generic linux-headers-generic
       update-initramfs -c -k all
       
-      sudo cp /boot/grub/x86_64-efi/grub.efi /boot/efi/EFI/pop/grubx64.efi
+      sudo cp /mnt/boot/grub/x86_64-efi/grub.efi /mnt/boot/efi/EFI/pop/grubx64.efi
       
       if you saved the Microsoft folder in step 0
           copy it to /mnt/boot/efi/EFI or see if it's already in there

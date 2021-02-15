@@ -1,0 +1,7 @@
+1. If there is an old device.map file run the next command to avoid eliminating it
+    sudo mv /boot/grub/device.map /boot/grub/device.map.bak
+
+2. Now, to generate the new device.map file just type the following command
+    sudo grub –device-map=/boot/grub/device.map
+
+3. Now grub-customizer and other grub apps will see the device.map file created

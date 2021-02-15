@@ -1,0 +1,32 @@
+When the issue shows during boot, can be 2 modes to access the system to perform a fix
+
+1. In grub minimal-bash window type
+    ls      (this will show the disk partitions)
+    
+2. type the following commands in order (assuming hd0,gpt1 as your EFI partition and hd0,gpt2 as your linux partition)
+
+    set root=(hd0,2)
+    set prefix=(hd0,2)/boot/grub
+    insmod normal
+    normal
+    
+3. Now your system should boot, perform an efi-grub repair process
+
+4. If you found problems with the step 1 or step 2 type the next commands (assuming hd0,gpt1 as your EFI partition and hd0,gpt2 as your linux partition)
+
+    linux (hd1,6)/boot/vm[press TAB to auto-complete] root=/dev/sda2
+    initrd (hd1,6)/boot/ini[press TAB to auto-complete]
+    
+    boot
+
+|----------------------------------------------------------|
+|   GRUB REPAIR PROCESS AFTER STARTING YOUR LINUX SYSTEM   |
+|----------------------------------------------------------|
+
+Type in a shel the following commands (assuming /dev/sda is your drive)
+
+    sudo update-grub
+    grub-install /dev/sda
+    sudo cp /boot/grub/x86_64-efi/grub.efi /boot/efi/EFI/pop/grubx64.efi
+    
+in the last line the directory "pop" is given for the OS, example "manjaro", "ubuntu", "mint", "arch", etc. In this case is for POP_OS!

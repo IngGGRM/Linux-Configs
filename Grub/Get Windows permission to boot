@@ -1,0 +1,6 @@
+In Windows administrative cmd window type the following
+
+    bcdedit /set {bootmgr} path \EFI\debian\grubx64.efi
+    
+    See that the folder "debian" here is the name of the /boot/efi/EFI/"YOUR_DISTRO_NAME"
+    for example, manjaro distro uses "manjaro", pop_os distro uses "pop", etc

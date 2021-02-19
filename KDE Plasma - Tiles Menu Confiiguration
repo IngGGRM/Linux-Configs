@@ -6,7 +6,7 @@
   "fixedPanelIconDefault": true,
   "fixedPanelIcon": true,
   "searchResultsMergedDefault": true,
-  "searchResultsMerged": true,
+  "searchResultsMerged": false,
   "searchResultsCustomSortDefault": false,
   "searchResultsReversedDefault": false,
   "searchDefaultFiltersDefault": [
@@ -44,13 +44,11 @@
     "systemsettings.desktop"
   ],
   "sidebarShortcuts": [
-    "xdg:DOCUMENTS",
-    "xdg:PICTURES",
     "org.kde.dolphin.desktop",
     "systemsettings.desktop"
   ],
   "defaultAppListViewDefault": "Alphabetical",
-  "defaultAppListView": "Categories",
+  "defaultAppListView": "Alphabetical",
   "tileModelDefault": "",
   "tileModel": [
     {
@@ -59,232 +57,174 @@
       "w": 2,
       "h": 2,
       "url": "net.lutris.Lutris.desktop",
-      "showLabel": false,
-      "backgroundColor": "#3d3d3d"
+      "showLabel": false
     },
     {
-      "x": 0,
-      "y": 0,
-      "w": 2,
-      "h": 2,
-      "url": "firefox.desktop",
-      "showLabel": false,
-      "backgroundColor": "#3d3d3d"
-    },
-    {
-      "x": 2,
-      "y": 0,
-      "w": 1,
-      "h": 1,
-      "url": "org.manjaro.pamac.manager.desktop",
-      "backgroundColor": "#3d3d3d"
-    },
-    {
-      "x": 2,
-      "y": 1,
-      "w": 2,
-      "h": 2,
-      "url": "cantata.desktop",
-      "showLabel": false,
-      "backgroundColor": "#3d3d3d"
-    },
-    {
-      "x": 4,
-      "y": 2,
-      "w": 2,
-      "h": 1,
-      "url": "caprine.desktop",
-      "label": "Messenger",
-      "backgroundColor": "#3d3d3d"
-    },
-    {
-      "x": 0,
-      "y": 2,
-      "w": 1,
-      "h": 1,
-      "url": "google-chrome.desktop",
-      "label": "Chrome",
-      "backgroundColor": "#3d3d3d"
-    },
-    {
-      "x": 0,
-      "y": 3,
-      "w": 1,
-      "h": 1,
-      "url": "chrome-dbpkegghbgplfeaapbejbnfpbgnbjedf-Default.desktop",
-      "label": "Meet",
-      "backgroundColor": "#3d3d3d"
-    },
-    {
-      "x": 2,
-      "y": 10,
-      "w": 4,
-      "h": 1,
-      "url": "org.kde.konsole.desktop",
-      "showLabel": true,
-      "backgroundColor": "#783334"
-    },
-    {
-      "x": 0,
-      "y": 10,
-      "w": 2,
-      "h": 1,
-      "url": "org.kde.ksysguard.desktop",
-      "backgroundColor": "#783334",
-      "label": "KDE System Monitor"
-    },
-    {
-      "x": 6,
+      "x": 5,
       "y": 0,
       "w": 2,
       "h": 2,
       "url": "playonlinux-Microsoft Word 2010.desktop",
-      "label": "Word",
-      "showLabel": false,
-      "backgroundColor": "#3d3d3d"
+      "showLabel": false
     },
     {
       "x": 6,
       "y": 2,
       "w": 1,
       "h": 1,
-      "url": "playonlinux-Microsoft Powerpoint 2010.desktop",
-      "label": "PowerPoint",
-      "backgroundColor": "#3d3d3d"
-    },
-    {
-      "x": 7,
-      "y": 2,
-      "w": 1,
-      "h": 1,
-      "url": "playonlinux-Microsoft Excel 2010.desktop",
-      "label": "Excel",
-      "backgroundColor": "#3d3d3d"
-    },
-    {
-      "x": 6,
-      "y": 4,
-      "w": 2,
-      "h": 1,
-      "url": "org.openshot.OpenShot.desktop",
-      "label": "OpenShot",
-      "backgroundColor": "#3d3d3d"
+      "url": "playonlinux-Microsoft Powerpoint 2010.desktop"
     },
     {
       "x": 5,
-      "y": 3,
-      "w": 1,
-      "h": 3,
-      "url": "openboard.desktop",
-      "label": "OpenBoard",
-      "backgroundColor": "#3d3d3d"
-    },
-    {
-      "x": 4,
-      "y": 7,
+      "y": 2,
       "w": 1,
       "h": 1,
-      "url": "PlayOnLinux.desktop",
-      "backgroundColor": "#3d3d3d"
-    },
-    {
-      "x": 1,
-      "y": 3,
-      "w": 1,
-      "h": 1,
-      "url": "org.qbittorrent.qBittorrent.desktop",
-      "label": "qBitTorrent",
-      "backgroundColor": "#3d3d3d"
-    },
-    {
-      "x": 6,
-      "y": 3,
-      "w": 2,
-      "h": 1,
-      "url": "simplescreenrecorder.desktop",
-      "label": "Screen Recorder",
-      "backgroundColor": "#3d3d3d"
-    },
-    {
-      "x": 2,
-      "y": 6,
-      "w": 2,
-      "h": 2,
-      "url": "steam-native.desktop",
-      "showLabel": true,
-      "label": "Steam",
-      "backgroundColor": "#3d3d3d"
+      "url": "playonlinux-Microsoft Excel 2010.desktop"
     },
     {
       "x": 3,
       "y": 0,
+      "w": 2,
+      "h": 2,
+      "url": "whatsapp-web-desktop.desktop",
+      "showLabel": false
+    },
+    {
+      "x": 3,
+      "y": 2,
       "w": 1,
       "h": 1,
-      "url": "thunderbird.desktop",
-      "backgroundColor": "#3d3d3d"
+      "url": "skype_skypeforlinux.desktop"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "w": 1,
+      "h": 1,
+      "url": "thunderbird.desktop"
     },
     {
       "x": 4,
+      "y": 2,
+      "w": 1,
+      "h": 1,
+      "url": "caprine.desktop"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "w": 1,
+      "h": 1,
+      "url": "discord.desktop"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "w": 2,
+      "h": 2,
+      "url": "io.github.celluloid_player.Celluloid.desktop",
+      "showLabel": false
+    },
+    {
+      "x": 5,
+      "y": 6,
+      "w": 2,
+      "h": 1,
+      "url": "cantata.desktop",
+      "showLabel": true,
+      "showIcon": true
+    },
+    {
+      "x": 0,
       "y": 0,
       "w": 2,
       "h": 2,
-      "url": "walc_walc.desktop",
-      "showLabel": false,
-      "backgroundColor": "#3d3d3d"
+      "url": "brave-browser.desktop",
+      "showLabel": false
+    },
+    {
+      "x": 0,
+      "y": 8,
+      "w": 2,
+      "h": 2,
+      "url": "org.kde.konsole.desktop",
+      "showLabel": false
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "w": 2,
+      "h": 2,
+      "url": "org.manjaro.pamac.manager.desktop",
+      "label": "Pamac",
+      "showIcon": true,
+      "showLabel": false
+    },
+    {
+      "x": 2,
+      "y": 5,
+      "w": 2,
+      "h": 2,
+      "url": "lsi-steam.desktop",
+      "showLabel": false
+    },
+    {
+      "x": 2,
+      "y": 8,
+      "w": 2,
+      "h": 2,
+      "url": "org.kde.ksysguard.desktop"
+    },
+    {
+      "x": 5,
+      "y": 8,
+      "w": 2,
+      "h": 1,
+      "url": "openboard.desktop"
+    },
+    {
+      "x": 5,
+      "y": 7,
+      "w": 2,
+      "h": 1,
+      "url": "org.openshot.OpenShot.desktop"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "w": 2,
+      "h": 1,
+      "url": "PlayOnLinux.desktop"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "w": 1,
+      "h": 1,
+      "url": "appimagekit_a6cf671e889a52877e518e3cffa47166-Pling-Store.desktop"
+    },
+    {
+      "x": 4,
+      "y": 3,
+      "w": 1,
+      "h": 1,
+      "url": "org.qbittorrent.qBittorrent.desktop"
     },
     {
       "x": 2,
       "y": 3,
-      "w": 3,
-      "h": 1,
-      "url": "xdman.desktop",
-      "backgroundColor": "#3d3d3d"
-    },
-    {
-      "x": 6,
-      "y": 5,
       "w": 2,
       "h": 1,
-      "url": "vlc.desktop",
-      "label": "VLC Media",
-      "backgroundColor": "#3d3d3d"
-    },
-    {
-      "x": 6,
-      "y": 10,
-      "w": 2,
-      "h": 1,
-      "url": "htop.desktop",
-      "backgroundColor": "#783334",
-      "label": "",
-      "showIcon": true
-    },
-    {
-      "x": 1,
-      "y": 2,
-      "w": 1,
-      "h": 1,
-      "url": "links.desktop",
-      "label": "Links",
-      "backgroundColor": "#3d3d3d"
-    },
-    {
-      "x": 2,
-      "y": 5,
-      "w": 2,
-      "h": 1,
-      "url": "file:///home/ingggrm/Escritorio/Mental Omega XNA_Client.desktop",
-      "backgroundColor": "#3d3d3d",
-      "label": "Mental Omega"
+      "url": "xdman.desktop"
     }
   ],
   "tileScaleDefault": 0.8,
   "tileMarginDefault": 5,
-  "tileMargin": 5,
+  "tileMargin": 2,
   "tilesLockedDefault": false,
   "tilesLocked": false,
   "defaultTileColorDefault": "",
-  "defaultTileColor": "#00000000",
+  "defaultTileColor": "#2a2a2a",
   "defaultTileGradientDefault": false,
   "defaultTileGradient": false,
   "sidebarBackgroundColorDefault": "",
@@ -306,13 +246,13 @@
   "appListWidthDefault": 350,
   "appListWidth": 350,
   "favGridColsDefault": 6,
-  "favGridCols": 8,
+  "favGridCols": 7,
   "popupHeightDefault": 620,
-  "popupHeight": 700,
+  "popupHeight": 630,
   "sidebarButtonSizeDefault": 48,
   "sidebarButtonSize": 48,
   "sidebarIconSizeDefault": 30,
-  "sidebarIconSize": 30,
+  "sidebarIconSize": 28,
   "sidebarPopupButtonSizeDefault": 36,
   "sidebarPopupButtonSize": 36
 }

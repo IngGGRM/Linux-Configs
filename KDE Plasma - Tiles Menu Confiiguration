@@ -2,7 +2,7 @@
   "fullscreenDefault": false,
   "fullscreen": false,
   "iconDefault": "start-here-kde",
-  "icon": "start-here-kde",
+  "icon": "start-here-archlinux",
   "fixedPanelIconDefault": true,
   "fixedPanelIcon": true,
   "searchResultsMergedDefault": true,
@@ -83,14 +83,6 @@
     },
     {
       "x": 3,
-      "y": 0,
-      "w": 2,
-      "h": 2,
-      "url": "whatsapp-web-desktop.desktop",
-      "showLabel": false
-    },
-    {
-      "x": 3,
       "y": 2,
       "w": 1,
       "h": 1,
@@ -111,19 +103,13 @@
       "url": "caprine.desktop"
     },
     {
-      "x": 2,
-      "y": 1,
-      "w": 1,
-      "h": 1,
-      "url": "discord.desktop"
-    },
-    {
       "x": 5,
-      "y": 4,
+      "y": 5,
       "w": 2,
-      "h": 2,
+      "h": 1,
       "url": "io.github.celluloid_player.Celluloid.desktop",
-      "showLabel": false
+      "showLabel": true,
+      "label": "Celluloid"
     },
     {
       "x": 5,
@@ -136,14 +122,6 @@
     },
     {
       "x": 0,
-      "y": 0,
-      "w": 2,
-      "h": 2,
-      "url": "brave-browser.desktop",
-      "showLabel": false
-    },
-    {
-      "x": 0,
       "y": 8,
       "w": 2,
       "h": 2,
@@ -151,7 +129,7 @@
       "showLabel": false
     },
     {
-      "x": 0,
+      "x": 1,
       "y": 2,
       "w": 2,
       "h": 2,
@@ -173,14 +151,8 @@
       "y": 8,
       "w": 2,
       "h": 2,
-      "url": "org.kde.ksysguard.desktop"
-    },
-    {
-      "x": 5,
-      "y": 8,
-      "w": 2,
-      "h": 1,
-      "url": "openboard.desktop"
+      "url": "org.kde.ksysguard.desktop",
+      "showLabel": false
     },
     {
       "x": 5,
@@ -191,31 +163,77 @@
     },
     {
       "x": 0,
-      "y": 4,
-      "w": 2,
-      "h": 1,
-      "url": "PlayOnLinux.desktop"
-    },
-    {
-      "x": 2,
       "y": 2,
       "w": 1,
       "h": 1,
       "url": "appimagekit_a6cf671e889a52877e518e3cffa47166-Pling-Store.desktop"
     },
     {
-      "x": 4,
-      "y": 3,
+      "x": 0,
+      "y": 4,
       "w": 1,
       "h": 1,
       "url": "org.qbittorrent.qBittorrent.desktop"
     },
     {
-      "x": 2,
-      "y": 3,
-      "w": 2,
+      "x": 1,
+      "y": 4,
+      "w": 3,
       "h": 1,
       "url": "xdman.desktop"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "w": 1,
+      "h": 1,
+      "url": "discord.desktop",
+      "showLabel": true
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "w": 2,
+      "h": 2,
+      "url": "brave-browser.desktop",
+      "showLabel": false
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "w": 2,
+      "h": 2,
+      "url": "whatsapp-web-desktop.desktop",
+      "showLabel": false
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "w": 1,
+      "h": 1,
+      "url": "org.kde.discover.desktop"
+    },
+    {
+      "x": 4,
+      "y": 9,
+      "w": 1,
+      "h": 1,
+      "url": "org.bleachbit.BleachBit.desktop"
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "w": 2,
+      "h": 2,
+      "url": "code_code.desktop",
+      "showLabel": false
+    },
+    {
+      "x": 5,
+      "y": 8,
+      "w": 2,
+      "h": 1,
+      "url": "openboard.desktop"
     }
   ],
   "tileScaleDefault": 0.8,

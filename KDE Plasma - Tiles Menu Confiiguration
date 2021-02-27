@@ -104,7 +104,7 @@
     },
     {
       "x": 5,
-      "y": 5,
+      "y": 3,
       "w": 2,
       "h": 1,
       "url": "io.github.celluloid_player.Celluloid.desktop",
@@ -112,9 +112,9 @@
       "label": "Celluloid"
     },
     {
-      "x": 5,
-      "y": 6,
-      "w": 2,
+      "x": 6,
+      "y": 4,
+      "w": 1,
       "h": 1,
       "url": "cantata.desktop",
       "showLabel": true,
@@ -150,14 +150,15 @@
       "x": 2,
       "y": 8,
       "w": 2,
-      "h": 2,
+      "h": 1,
       "url": "org.kde.ksysguard.desktop",
-      "showLabel": false
+      "showLabel": true,
+      "label": "KSysGuard Monitor"
     },
     {
       "x": 5,
-      "y": 7,
-      "w": 2,
+      "y": 4,
+      "w": 1,
       "h": 1,
       "url": "org.openshot.OpenShot.desktop"
     },
@@ -222,7 +223,7 @@
     },
     {
       "x": 5,
-      "y": 3,
+      "y": 6,
       "w": 2,
       "h": 2,
       "url": "code_code.desktop",
@@ -230,10 +231,46 @@
     },
     {
       "x": 5,
-      "y": 8,
+      "y": 5,
       "w": 2,
       "h": 1,
       "url": "openboard.desktop"
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "w": 1,
+      "h": 1,
+      "url": "red-app_red-app.desktop"
+    },
+    {
+      "x": 5,
+      "y": 9,
+      "w": 2,
+      "h": 1,
+      "url": "LiveWire.desktop"
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "w": 2,
+      "h": 1,
+      "url": "heroic.desktop",
+      "label": "Heroic Epic Launcher"
+    },
+    {
+      "x": 5,
+      "y": 8,
+      "w": 2,
+      "h": 1,
+      "url": "mplab.desktop"
+    },
+    {
+      "x": 2,
+      "y": 9,
+      "w": 2,
+      "h": 1,
+      "url": "htop.desktop"
     }
   ],
   "tileScaleDefault": 0.8,

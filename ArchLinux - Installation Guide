@@ -97,7 +97,122 @@ The next guide describes the steps to get Archlinux installed under UEFI (GPT) p
         *press Enter to select the default repository source.
         *enter Y to accept the download and installation of files
         
+  f) Some final steps before booting our system
+  
+     Next, generate a file system table file (fstab).
+
+        genfstab -U -p /mnt >> /mnt/etc/fstab
+
+     Change root
+
+        arch-chroot /mnt
         
+     Edit the locale.gen file.
+
+        nano /etc/locale.gen
+        
+        *find locales that you need and uncomment them. For example, I uncommmented en_US.UTF-8 UTF-8. Save the file. Then run the following command.
+
+        echo LANG=en_US.UTF-8 > /etc/locale.conf
+        export LANG=en_US.UTF-8
+        
+     List time zones.
+
+        timedatectl list-timezones
+        
+        *when you find your time zone, press Q to quit. Then run the following command to set your time zone. Mine is America/Santo_Domingo
+
+        timedatectl set-timezone America/Santo_Domingo
+        
+     To check your current time zone on your OS, run
+
+        timedatectl
+
+     Install DHCPCD module
+     
+        pacman -S dhcpcd
+
+     Enable eth0 network interface.
+
+        systemctl enable dhcpcd@eth0.service
+        
+     ***If you are on a laptop, then you probably want to install wireless networking tools:
+     
+        pacman -S wireless_tools wpa_supplicant dialog
+        
+        ***Run the following command to connect to a wireless network.
+        
+        wifi-menu
+        
+        ***And enable wireless network interface.
+        
+        systemctl enable net-auto-wireless.service
+
+     Install network manager and related tools.
+
+        pacman -S networkmanager networkmanager-vpnc network-manager-applet
+     
+     Enable network manager.
+
+        systemctl enable NetworkManager
+        
+     Configure pacman package manager.
+
+        nano /etc/pacman.conf
+        
+        *find repositories section. If your ArchLinux is 64 bit and you want to be able to install and run 32 bit software
+        *enable [multilib] repository deleting the # symbol in front of the next two lines
+
+        [multilib]
+            Include = /etc/pacman.d/mirrorlist
+            
+        *Save and close this file. Now update repositories.
+
+        pacman -Sy
+
+     Set a password for the root user.
+
+        passwd root
+
+     Create a standard user account. Replace <username> with your preferred username.
+
+        useradd -m -g users -G wheel,storage,power -s /bin/bash <username>
+
+     Set a password for this user.
+
+        passwd <username>
+     
+     Install sudo utility
+
+        pacman -S sudo
+          
+     Allow member of wheel group to use sudo.
+
+        EDITOR=nano visudo
+          
+        *Find this line.
+        **# %wheel ALL=(ALL) ALL
+        *Remove the # sign and save this file.
+
+     Install grub and efi boot manager
+
+        pacman -S grub efibootmgr
+     
+     Install Grub boot loader to /dev/sda.
+
+        grub-install /dev/sda --target=x86_64-efi --efi-directory=/boot
+
+     Generate Grub configuration file.
+
+        grub-mkconfig -o /boot/grub/grub.cfg
+
+     Exit out of chroot environment.
+
+        exit
+
+     Reboot.
+
+        shutdown -r now
         
         
         

@@ -1,0 +1,105 @@
+The next guide describes the steps to get Archlinux installed under UEFI (GPT) partition system.
+
+1. Boot properly through your Live USB or any prefered way
+2. when you reach the shell window with a root prompt to write, everything starts.
+
+3. Follow the next codes to get the installation:
+
+  a) Check if you can access Internet with the following command, assuming LAN cable is conected.
+        
+        ping -c6 www.linuxbabe.com
+
+     You can use the following command to connect to Wi-Fi networks.
+        wifi-menu
+        
+  b) Set US keyboard as the keyboard layout:
+        
+        loadkeys us
+        
+  c) Now let’s configure the disk. Assuming that the disk is only to this proccess, ou can run the following command to find out the name of your hard drive.
+        
+        parted -l
+        
+        * Usually /dev/sda is the name of the hard drive and /dev/sr0 refers to the ArchLinux ISO.
+
+     To create the partition table GPT (GUID Partition Table) instead of in MBR (Master Boot Record).
+
+        parted /dev/sda mklabel gpt
+        
+        *You can confirm it’s a GPT disk using this command:
+
+        parted /dev/sda -l
+        
+     Make parted use /dev/sda.
+
+        parted /dev/sda
+        
+     Use the next command to start a disk partition utility gui, and create at least the EFI and Root partitions. Optional: SWAP partition.
+     EFI partition is recomended to be around 500M (I recommend 512 MB)
+     
+        cfdisk
+        
+        *create EFI partition: Size - 512M (recommended), Type - EFI File System
+        *create Root partition: Size - (rest of free space minus swap), Type - Linux File System
+        *create Swap partition: Size - (2G or 4G recommended), Type - EFI File System
+        *write out the partitions to the disk
+        *finally quit the cfdisk utility
+
+     Use the next comands to format the disk partitions.
+     
+        fdisk -l
+        
+        *this command returns the disk with partitions. Check that EFI partition says "esp boot", otherwise
+        
+        set 1 boot on
+        
+        */dev/sda1 should be EFI    |
+        */dev/sda2 should be Root   |  In this guide
+        */dev/sda3 should be Swap   |
+
+        mkfs -t fat /dev/sda1
+        mkfs -t ext4 /dev/sda2
+        mkswap /dev/sda3
+        swapon /dev/sda3
+        
+  d) Now let's mount the disk partitions to start the installation.
+  
+     To mount the root partition under /mnt.
+        
+        mount /dev/sda2 /mnt
+        
+     Make a boot directory on root partition.
+     
+        mkdir /mnt/boot
+         
+     Mount the EFI system partition under /mnt/boot/
+
+        mount /dev/sda1 /mnt/boot/
+        
+  e) Now let's start the installation of files
+        
+        nano /etc/pacman.d/mirrorlist
+        
+        *to select a mirror that is close to your location, copy that mirror address to the top of the mirror list
+        *ctrl k > cut
+        *ctrl u > paste
+        *ctrl o > save
+        *ctrl x > exit
+     
+     First update the linux keyring to avoid signature of files issues.
+     
+        pacman -S archlinux-keyring
+     
+     Now run the following command to install ArchLinux base system with the Linux kernel and Nano text editor on root partition.
+
+        pacstrap -i /mnt base linux linux-firmware nano
+        
+        *press Enter to select the default repository source.
+        *enter Y to accept the download and installation of files
+        
+        
+        
+        
+        
+        
+        

@@ -1,43 +1,45 @@
 The next guide describes the steps to get Archlinux installed under UEFI (GPT) partition system.
+NOTE. Lines with '>' symbol in front means commands
 
 1. Boot properly through your Live USB or any prefered way
 2. when you reach the shell window with a root prompt to write, everything starts.
 
 3. Follow the next codes to get the installation:
 
-  a) Check if you can access Internet with the following command, assuming LAN cable is conected.
-        
-        ping -c6 www.linuxbabe.com
+	a) Check if you can access Internet with the following command, assuming LAN cable is conected.
+		
+		> ping -c6 www.linuxbabe.com
 
      You can use the following command to connect to Wi-Fi networks.
-        wifi-menu
+        
+		> wifi-menu
         
   b) Set US keyboard as the keyboard layout:
         
-        loadkeys us
+		> loadkeys us
         
   c) Now let’s configure the disk. Assuming that the disk is only to this proccess, ou can run the following command to find out the name of your hard drive.
         
-        parted -l
+		> parted -l
         
         * Usually /dev/sda is the name of the hard drive and /dev/sr0 refers to the ArchLinux ISO.
 
      To create the partition table GPT (GUID Partition Table) instead of in MBR (Master Boot Record).
 
-        parted /dev/sda mklabel gpt
+		> parted /dev/sda mklabel gpt
         
         *You can confirm it’s a GPT disk using this command:
 
-        parted /dev/sda -l
+		> parted /dev/sda -l
         
      Make parted use /dev/sda.
 
-        parted /dev/sda
+		> parted /dev/sda
         
      Use the next command to start a disk partition utility gui, and create at least the EFI and Root partitions. Optional: SWAP partition.
      EFI partition is recomended to be around 500M (I recommend 512 MB)
      
-        cfdisk
+		> cfdisk
         
         *create EFI partition: Size - 512M (recommended), Type - EFI File System
         *create Root partition: Size - (rest of free space minus swap), Type - Linux File System
@@ -47,38 +49,38 @@ The next guide describes the steps to get Archlinux installed under UEFI (GPT) p
 
      Use the next comands to format the disk partitions.
      
-        fdisk -l
+        > fdisk -l
         
         *this command returns the disk with partitions. Check that EFI partition says "esp boot", otherwise
         
-        set 1 boot on
+        > set 1 boot on
         
         */dev/sda1 should be EFI    |
         */dev/sda2 should be Root   |  In this guide
         */dev/sda3 should be Swap   |
 
-        mkfs -t fat /dev/sda1
-        mkfs -t ext4 /dev/sda2
-        mkswap /dev/sda3
-        swapon /dev/sda3
+        > mkfs -t fat /dev/sda1
+        > mkfs -t ext4 /dev/sda2
+        > mkswap /dev/sda3
+        > swapon /dev/sda3
         
   d) Now let's mount the disk partitions to start the installation.
   
      To mount the root partition under /mnt.
         
-        mount /dev/sda2 /mnt
+        > mount /dev/sda2 /mnt
         
      Make a boot directory on root partition.
      
-        mkdir /mnt/boot
+        > mkdir /mnt/boot
          
      Mount the EFI system partition under /mnt/boot/
 
-        mount /dev/sda1 /mnt/boot/
+        > mount /dev/sda1 /mnt/boot/
         
   e) Now let's start the installation of files
         
-        nano /etc/pacman.d/mirrorlist
+        > nano /etc/pacman.d/mirrorlist
         
         *to select a mirror that is close to your location, copy that mirror address to the top of the mirror list
         *ctrl k > cut
@@ -88,11 +90,11 @@ The next guide describes the steps to get Archlinux installed under UEFI (GPT) p
      
      First update the linux keyring to avoid signature of files issues.
      
-        pacman -S archlinux-keyring
+        > pacman -S archlinux-keyring
      
      Now run the following command to install ArchLinux base system with the Linux kernel and Nano text editor on root partition.
 
-        pacstrap -i /mnt base linux linux-firmware nano
+        > pacstrap -i /mnt base linux linux-firmware nano
         
         *press Enter to select the default repository source.
         *enter Y to accept the download and installation of files
@@ -101,120 +103,116 @@ The next guide describes the steps to get Archlinux installed under UEFI (GPT) p
   
      Next, generate a file system table file (fstab).
 
-        genfstab -U -p /mnt >> /mnt/etc/fstab
+        > genfstab -U -p /mnt >> /mnt/etc/fstab
 
      Change root
 
-        arch-chroot /mnt
+        > arch-chroot /mnt
         
      Edit the locale.gen file.
 
-        nano /etc/locale.gen
+        > nano /etc/locale.gen
         
         *find locales that you need and uncomment them. For example, I uncommmented en_US.UTF-8 UTF-8. Save the file. Then run the following command.
 
-        echo LANG=en_US.UTF-8 > /etc/locale.conf
-        export LANG=en_US.UTF-8
+        > echo LANG=en_US.UTF-8 > /etc/locale.conf
+        > export LANG=en_US.UTF-8
         
      List time zones.
 
-        timedatectl list-timezones
+        > timedatectl list-timezones
         
         *when you find your time zone, press Q to quit. Then run the following command to set your time zone. Mine is America/Santo_Domingo
 
-        timedatectl set-timezone America/Santo_Domingo
+        > timedatectl set-timezone America/Santo_Domingo
         
      To check your current time zone on your OS, run
 
-        timedatectl
+        > timedatectl
 
      Install DHCPCD module
      
-        pacman -S dhcpcd
+        > pacman -S dhcpcd
 
      Enable eth0 network interface.
 
-        systemctl enable dhcpcd@eth0.service
+        > systemctl enable dhcpcd@eth0.service
         
      ***If you are on a laptop, then you probably want to install wireless networking tools:
      
-        pacman -S wireless_tools wpa_supplicant dialog
+        > pacman -S wireless_tools wpa_supplicant dialog
         
         ***Run the following command to connect to a wireless network.
         
-        wifi-menu
+        > wifi-menu
         
         ***And enable wireless network interface.
         
-        systemctl enable net-auto-wireless.service
+        > systemctl enable net-auto-wireless.service
 
      Install network manager and related tools.
 
-        pacman -S networkmanager networkmanager-vpnc network-manager-applet
+        > pacman -S networkmanager networkmanager-vpnc network-manager-applet
      
      Enable network manager.
 
-        systemctl enable NetworkManager
+        > systemctl enable NetworkManager
         
      Configure pacman package manager.
 
-        nano /etc/pacman.conf
+        > nano /etc/pacman.conf
         
-        *find repositories section. If your ArchLinux is 64 bit and you want to be able to install and run 32 bit software
-        *enable [multilib] repository deleting the # symbol in front of the next two lines
-
-        [multilib]
-            Include = /etc/pacman.d/mirrorlist
+        * find repositories section. If your ArchLinux is 64 bit and you want to be able to install and run 32 bit software
+        * enable [multilib] repository deleting the # symbol in front of the next two lines:
+		* [multilib]
+        * 	Include = /etc/pacman.d/mirrorlist
             
-        *Save and close this file. Now update repositories.
+        * Save and close this file. Now update repositories.
 
-        pacman -Sy
+        > pacman -Sy
 
      Set a password for the root user.
 
-        passwd root
+        > passwd root
 
      Create a standard user account. Replace <username> with your preferred username.
 
-        useradd -m -g users -G wheel,storage,power -s /bin/bash <username>
+        > useradd -m -g users -G wheel,storage,power -s /bin/bash <username>
 
      Set a password for this user.
 
-        passwd <username>
+        > passwd <username>
      
      Install sudo utility
 
-        pacman -S sudo
+        > pacman -S sudo
           
      Allow member of wheel group to use sudo.
 
-        EDITOR=nano visudo
+        > EDITOR=nano visudo
           
-        *Find this line.
-        **# %wheel ALL=(ALL) ALL
-        *Remove the # sign and save this file.
+        * Find this line.
+        * 	# %wheel ALL=(ALL) ALL
+        * Remove the # sign and save this file.
 
      Install grub and efi boot manager
 
-        pacman -S grub efibootmgr
+        > pacman -S grub efibootmgr
      
      Install Grub boot loader to /dev/sda.
 
-        grub-install /dev/sda --target=x86_64-efi --efi-directory=/boot
+        > grub-install /dev/sda --target=x86_64-efi --efi-directory=/boot
 
      Generate Grub configuration file.
 
-        grub-mkconfig -o /boot/grub/grub.cfg
+        > grub-mkconfig -o /boot/grub/grub.cfg
 
      Exit out of chroot environment.
 
-        exit
+        > exit
 
      Reboot.
 
-        shutdown -r now
+        > shutdown -r now
         
-        
-        
-        
-        
+		
